@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="goup_titles">
+        <item>第三方应用</item>
+        <item>系统应用</item>
+    </array>
+</resources>
