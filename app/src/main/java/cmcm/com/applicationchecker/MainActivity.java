@@ -42,7 +42,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mAppSectionsPagerAdapter = new AppFragmentAdapter(getSupportFragmentManager());
+        mAppSectionsPagerAdapter = new AppFragmentAdapter(this, getSupportFragmentManager());
         actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -51,9 +51,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mViewPager.addOnPageChangeListener(this);
 
         for (int i = 0; i < mAppSectionsPagerAdapter.getCount(); i++) {
-            actionBar.addTab(actionBar.newTab()
-                            .setText(mAppSectionsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
+            actionBar.addTab(actionBar.newTab().setText(mAppSectionsPagerAdapter.getPageTitle(i)).setTabListener(this));
         }
     }
 
