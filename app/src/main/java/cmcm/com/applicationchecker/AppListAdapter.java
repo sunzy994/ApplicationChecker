@@ -50,6 +50,8 @@ public class AppListAdapter extends BaseAdapter {
         convertView.setTag(info.packageName);
         convertView.findViewById(R.id.icon_app).setBackground(mPackageManager.getApplicationIcon(info.applicationInfo));
         ((TextView)convertView.findViewById(R.id.app_label)).setText(mPackageManager.getApplicationLabel(info.applicationInfo));
+        ((TextView)convertView.findViewById(R.id.app_pkg)).setText(info.packageName);
+
         return convertView;
     }
 }

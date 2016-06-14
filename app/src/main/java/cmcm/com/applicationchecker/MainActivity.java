@@ -30,8 +30,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import cmcm.com.applicationchecker.CollectionDemoActivity;
-
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
 
     private AppFragmentAdapter mAppSectionsPagerAdapter;
@@ -44,7 +42,10 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         setContentView(R.layout.activity_main);
         mAppSectionsPagerAdapter = new AppFragmentAdapter(this, getSupportFragmentManager());
         actionBar = getActionBar();
-        actionBar.setHomeButtonEnabled(false);
+
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        // 换个theme，然后调用这个方法，就会隐藏掉title
+       actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mAppSectionsPagerAdapter);
